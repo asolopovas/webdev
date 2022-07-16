@@ -66,11 +66,6 @@ func HostsAdd(sites []Host) {
 		fmt.Println("adding " + site.Name + " to /etc/hosts")
 		hosts.AddHost("127.0.0.1", site.Name)
 	}
-	hfData := hosts.RenderHostsFile()
-
-	// if you like to see what the outcome will
-	// look like
-	fmt.Println(hfData)
 
 	hosts.Save()
 }

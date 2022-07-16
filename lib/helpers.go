@@ -1,6 +1,7 @@
 package lib
 
 import (
+	"fmt"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -14,6 +15,9 @@ func RmOldConfigs() {
 	ErrChk(err)
 
 	for _, file := range files {
+		if file.Name() == ".gitkeep" {
+			continue
+		}
 		filePath := filepath.Join(dirPath, file.Name())
 		err := os.Remove(filePath)
 		ErrChk(err)
@@ -24,6 +28,8 @@ func RmOldConfigs() {
 func Cmd(command string, arguments string, silent bool) {
 	os.Chdir(os.Getenv("HOME") + "/www/dev")
 	args := strings.Split(arguments, " ")
+	fmt.Println(args)
+	fmt.Println(command)
 	cmd := exec.Command(command, args...)
 	if !silent {
 		cmd.Stdout = os.Stdout
