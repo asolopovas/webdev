@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/asolopovas/dsync/webdev/lib"
+	"github.com/asolopovas/webdev/lib"
 	"github.com/txn2/txeh"
 )
 
