@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 )
 
@@ -19,4 +20,12 @@ func PathResolve(path string) string {
 		return filepath.Join(dirname, path[2:])
 	}
 	return filepath.Join(dirname, path)
+}
+
+func AddTrailingSlash(str string) string {
+	match, _ := regexp.MatchString("/$", str)
+	if match {
+		return str
+	}
+	return str + "/"
 }

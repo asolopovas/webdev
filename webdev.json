@@ -1,16 +1,23 @@
 {
     "output": "~/www/dev/nginx/sites/",
     "template": "~/www/dev/nginx/template.conf",
+    "workdir": "/home/www-data/www",
     "hosts": [
         {
-            "host": "alisiagreen.test",
-            "workdir": "/home/www-data/www/alisiagreen.test",
+            "name": "alisiagreen.test",
             "type": "wordpress"
         },
         {
-            "host": "laravel-vite.test",
-            "workdir": "/home/www-data/www/laravel-vite.test",
+            "name": "laravel-vite.test",
             "type": "laravel"
+        },
+        {
+            "name": "lcd.test",
+            "type": "wordpress"
+        },
+        {
+            "name": "lcm.test",
+            "type": "wordpress"
         }
     ]
 }
