@@ -1,0 +1,16 @@
+{
+    "output": "~/www/dev/nginx/sites/",
+    "template": "~/www/dev/nginx/template.conf",
+    "hosts": [
+        {
+            "host": "alisiagreen.test",
+            "workdir": "/home/www-data/www/alisiagreen.test",
+            "type": "wordpress"
+        },
+        {
+            "host": "laravel-vite.test",
+            "workdir": "/home/www-data/www/laravel-vite.test",
+            "type": "laravel"
+        }
+    ]
+}
